@@ -4,11 +4,13 @@ const express = require("express");
 const app = express();
 const {SERVER_PORT, CONNECTION_STRING} = process.env
 const massive = require("massive");
+const houseCtrl = require('./controllers/houseCtrl')
 
 app.use(express.json());
 
 
 //endpoints
+app.get('/api/house', houseCtrl.getAll)
 
 
 

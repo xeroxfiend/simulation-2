@@ -11,10 +11,10 @@ class Header extends Component {
 
     render() {
         return (
-            <div className='Header'>
+            <header className='Header'>
                 <img className='header-image' src={housericon} alt="Houser icon"/>
                 Houser
-            </div>
+            </header>
         )
     }
 }

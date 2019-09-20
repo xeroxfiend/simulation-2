@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 
 class House extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             placeholder: 'state'
         }
@@ -11,7 +11,7 @@ class House extends Component {
     render() {
         return(
             <div className='house'>
-                House
+                {this.props.houseData.name}
             </div>
         )
     }

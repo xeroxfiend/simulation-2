@@ -1,5 +1,12 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+// import store, {
+//     HANDLE_CHANGE_NAME,
+//     HANDLE_CHANGE_ADDRESS,
+//     HANDLE_CHANGE_CITY,
+//     HANDLE_CHANGE_STATE,
+//     HANDLE_CHANGE_ZIP
+//   } from "../../store";
 
 class Wizard extends Component {
     constructor() {
