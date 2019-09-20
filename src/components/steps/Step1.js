@@ -94,4 +94,4 @@ class Step1 extends Component {
     }
 }
 
-export default Wizard
+export default Step1
