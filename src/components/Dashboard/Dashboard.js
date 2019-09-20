@@ -9,7 +9,7 @@ class Dashboard extends Component {
     this.state = {
       houseList: []
     }
-    this.getData = this.getData.bind(this)
+    this.delete = this.delete.bind(this)
   }
 
   getData() {
@@ -30,7 +30,7 @@ class Dashboard extends Component {
 
   render() {
     const mappedHouse = this.state.houseList.map((house, index) => (
-      <House houseData={house} key={index} />
+      <House deleteFn={this.delete} houseData={house} key={index} />
     ));
     return (
       <div className="Dashboard">

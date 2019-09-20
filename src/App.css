@@ -60,7 +60,8 @@ hr {
 .home-listings {
     margin-left: 40px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .input-container {
@@ -162,4 +163,22 @@ button {
     align-items: flex-end;
     margin-right: 15px;
     margin-top: 200px;
+}
+
+.cancel-btn {
+    height: 30px;
+    background: #FEC2C2;
+    font-weight: bold;
+}
+
+.complete {
+    height: 30px;
+    background: #8AEA92;
+    font-weight: bold;
+}
+
+.add-property {
+    height: 30px;
+    background: #8AEA92;
+    font-weight: bold;
 }
