@@ -1,5 +1,5 @@
 .App {
-    height: 100vh;
+    min-height: 100vh;
     width: auto;
     background: #AFD4C0;
     display: flex;
@@ -9,7 +9,7 @@
 
 .Header {
     height: 80px;
-    width: 100vw;
+    width: 100%;
     background: #519872;
     display: flex;
     align-items: center;
@@ -27,7 +27,7 @@
 }
 
 .main {
-    height: 100%;
+    min-height: 100vh;
     width: 60%;
     background: #E5F4EC;
 }
@@ -60,6 +60,7 @@ hr {
 .home-listings {
     margin-left: 40px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .input-container {
@@ -73,10 +74,6 @@ hr {
     display: flex;
     flex-direction: column;
     margin: 10px;
-}
-
-.property-input {
-    font-weight: bold;
 }
 
 .property-input {
@@ -100,7 +97,15 @@ hr {
 }
 
 .address {
-    width: 500px;
+    width: 490px;
+}
+
+.property-name {
+    width: 250px;
+}
+
+.state {
+    width: 50px;
 }
 
 .house {
@@ -145,4 +150,16 @@ p {
 .pzip::before {
     content: 'Zip: ';
     font-weight: bold;
+}
+
+button {
+    border: none;
+}
+
+.complete-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 15px;
+    margin-top: 200px;
 }

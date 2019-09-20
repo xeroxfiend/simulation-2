@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 // import store, {
 //     HANDLE_CHANGE_NAME,
 //     HANDLE_CHANGE_ADDRESS,
@@ -9,8 +10,8 @@ import {Link} from 'react-router-dom'
 //   } from "../../store";
 
 class Wizard extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             name: '',
             address: '',
@@ -20,29 +21,36 @@ class Wizard extends Component {
         }
     }
 
+    buildRequest() {
+        axios.post('/api/house/add', {
+            name: this.state.name,
+            address: this.state.address,
+            city: this.state.city,
+            state: this.state.state,
+            zipcode: this.state.zip
+        }).then(res => {
+            this.props.history.push('/')
+        })
+    }
+
     handleChangeName (value) {
         this.setState({name: value })
-        console.log(this.state.name)
     }
 
     handleChangeAddress (value) {
         this.setState({address: value })
-        console.log(this.state.address)
     }
 
     handleChangeCity (value) {
         this.setState({city: value })
-        console.log(this.state.city)
     }
 
     handleChangeState (value) {
         this.setState({state: value })
-        console.log(this.state.state)
     }
 
     handleChangeZip (value) {
         this.setState({zip: value })
-        console.log(this.state.zip)
     }
 
     render() {
@@ -77,6 +85,9 @@ class Wizard extends Component {
                         Zip
                         <input onChange={(e) => this.handleChangeZip(e.target.value)} type="text" className="zip input"/>
                     </div>
+                </div>
+                <div className="complete-btn-container">
+                <button onClick={() => this.buildRequest()} className="complete">Complete</button>
                 </div>
             </div>
         )
