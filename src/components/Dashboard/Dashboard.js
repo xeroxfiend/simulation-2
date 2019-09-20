@@ -14,7 +14,7 @@ class Dashboard extends Component {
   componentDidMount() {
     axios.get("/api/house").then(res => {
         this.setState({houseList: res.data});
-        console.log(res)
+        console.log(this.state.houseList)
     });
   }
 
@@ -31,6 +31,7 @@ class Dashboard extends Component {
           </Link>
         </header>
         <hr />
+        <p className='home-listings'>Home Listings</p>
         {mappedHouse}
       </div>
     );

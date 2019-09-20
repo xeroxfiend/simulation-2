@@ -57,6 +57,11 @@ hr {
     opacity: 0.7;
 }
 
+.home-listings {
+    margin-left: 40px;
+    font-weight: bold;
+}
+
 .input-container {
     display: flex;
     flex-wrap: wrap;
@@ -98,8 +103,46 @@ hr {
     width: 500px;
 }
 
+.house {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    margin: 0 15px 25px 15px;
+    background: #DEDEDE;
+    padding: 10px;
+    border-radius: 5px;
+}
 
-/* 
-.state {
-    width: 50px;
-} */
+.info-container {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    margin: 5px;
+}
+
+.pproperty::before {
+    content: 'Property Name: ';
+    font-weight: bold;
+}
+
+.paddress::before {
+    content: 'Address: ';
+    font-weight: bold;
+}
+
+.pcity:before {
+    content: 'City: ';
+    font-weight: bold;
+}
+
+.pstate::before {
+    content: 'State: ';
+    font-weight: bold;
+}
+
+.pzip::before {
+    content: 'Zip: ';
+    font-weight: bold;
+}
