@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import housericon from '../../assets/housericon.JPG'
 
 class Header extends Component {
     constructor() {
@@ -11,7 +12,8 @@ class Header extends Component {
     render() {
         return (
             <div className='Header'>
-                Header
+                <img className='header-image' src={housericon} alt="Houser icon"/>
+                Houser
             </div>
         )
     }

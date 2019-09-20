@@ -1,22 +1,87 @@
 .App {
-  text-align: center;
+    height: 100vh;
+    width: auto;
+    background: #AFD4C0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.Header {
+    height: 80px;
+    width: 100vw;
+    background: #519872;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header-image {
+    margin-left: 20%;
+    margin-top: 5px;
+    height: 40px;
+    width: 50px;
 }
 
-.App-link {
-  color: #09d3ac;
+.main {
+    height: 100%;
+    width: 60%;
+    background: #E5F4EC;
 }
+
+.subheader-wizard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px 10px 30px 10px;
+}
+
+.input-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.property-input {
+    font-weight: bold;
+}
+
+.property-input {
+    font-weight: bold;
+}
+
+.address-input {
+    font-weight: bold;
+}
+
+.city-input {
+    font-weight: bold;
+}
+
+.state-input {
+    font-weight: bold;
+}
+
+.zip-input {
+    font-weight: bold;
+}
+
+.address {
+    width: 500px;
+}
+
+
+/* 
+.state {
+    width: 50px;
+} */

@@ -7,9 +7,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Dashboard />
-      <Wizard /> */}
+      <div className="main">
       {routes}
+      </div>
     </div>
   );
 }
