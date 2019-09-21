@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import {Switch, Link, Route} from "react-router-dom";
-import Step1 from '../Steps/Step1'
-import Step2 from '../Steps/Step2'
-import Step3 from '../Steps/Step3'
+import Step1 from "../Steps/Step1";
+import Step2 from "../Steps/Step2";
+import Step3 from "../Steps/Step3";
 // import store, {
 //     HANDLE_CHANGE_NAME,
 //     HANDLE_CHANGE_ADDRESS,
@@ -12,10 +12,6 @@ import Step3 from '../Steps/Step3'
 //   } from "../../store";
 
 class Wizard extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="wizard">
@@ -27,9 +23,9 @@ class Wizard extends Component {
         </header>
         <div className="input-container"></div>
         <Switch>
-            <Route path='/wizard/step1' component={Step1} />
-            <Route path='/wizard/step2'component={Step2} />
-            <Route path='/wizard/step3'component={Step3} />
+          <Route path="/wizard/step1" component={Step1} />
+          <Route path="/wizard/step2" component={Step2} />
+          <Route path="/wizard/step3" component={Step3} />
         </Switch>
       </div>
     );

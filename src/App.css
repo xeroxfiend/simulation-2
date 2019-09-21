@@ -150,6 +150,13 @@ hr {
 .info-container {
     display: flex;
     flex-direction: column;
+    margin-left: -50px;
+}
+
+.mortgage-rent-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: -30px;
 }
 
 p {
@@ -178,6 +185,16 @@ p {
 
 .pzip::before {
     content: 'Zip: ';
+    font-weight: bold;
+}
+
+.pmortgage::before {
+    content: 'Monthly Mortgage: ';
+    font-weight: bold;
+}
+
+.prent::before {
+    content: 'Desired Rent: ';
     font-weight: bold;
 }
 
@@ -225,4 +242,10 @@ button {
 
 .add-property {
     background: #8AEA92;
+}
+
+img {
+    height: 150px;
+    width: 200px;
+    border-radius: 5px;
 }

@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {Link} from "react-router-dom";
 import store, {STEP_1} from "../../store";
 
 class Step1 extends Component {

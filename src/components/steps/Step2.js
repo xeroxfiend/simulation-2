@@ -21,14 +21,13 @@ class Step2 extends Component {
   }
 
   updateStoreState() {
-    store
-      .dispatch({
-        type: STEP_2,
-        payload: {
-          img: this.state.img
-        }
-      })
-      this.props.history.push("/wizard/step3")
+    store.dispatch({
+      type: STEP_2,
+      payload: {
+        img: this.state.img
+      }
+    });
+    this.props.history.push("/wizard/step3");
   }
 
   handleChangeImg(value) {

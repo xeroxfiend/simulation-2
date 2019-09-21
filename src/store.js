@@ -6,10 +6,9 @@ const initialState = {
   city: "",
   state: "",
   zip: null,
-  img: '',
-  mortgate: '',
-  rent: '',
-  houseList: []
+  img: "",
+  mortgage: null,
+  rent: null
 };
 
 //action constants
@@ -18,6 +17,8 @@ export const STEP_1 = "STEP_1";
 export const STEP_2 = "STEP_2";
 
 export const STEP_3 = "STEP_3";
+
+export const CLEAR = "CLEAR";
 
 // export const HANDLE_CHANGE_STATE = "HANDLE_CHANGE_STATE";
 
@@ -39,9 +40,23 @@ function reducer(state = initialState, action) {
     case STEP_2:
       return {...state, img: action.payload.img};
     case STEP_3:
-      return {...state, mortgage: action.payload.mortgage, rent: action.payload.rent};
-    // case HANDLE_CHANGE_STATE:
-    //   return {...state, state: action.payload};
+      return {
+        ...state,
+        mortgage: action.payload.mortgage,
+        rent: action.payload.rent
+      };
+    case CLEAR:
+      return {
+        ...state,
+        name: action.payload.name,
+        address: action.payload.address,
+        city: action.payload.city,
+        state: action.payload.state,
+        zip: action.payload.zip,
+        img: action.payload.img,
+        mortgage: action.payload.mortgage,
+        rent: action.payload.rent
+      };
     // case HANDLE_CHANGE_ZIP:
     //   return {...state, zip: action.payload};
     // case ADD_NEW_HOUSE:

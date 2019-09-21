@@ -1,13 +1,19 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
-import store, {STEP_3} from "../../store";
+import store, {STEP_3, CLEAR} from "../../store";
 
 class Step3 extends Component {
   constructor(props) {
     super(props);
     const reduxState = store.getState();
     this.state = {
+      name: reduxState.name,
+      address: reduxState.address,
+      city: reduxState.city,
+      state: reduxState.state,
+      zip: reduxState.zip,
+      img: reduxState.img,
       mortgage: reduxState.mortgage,
       rent: reduxState.rent
     };
@@ -15,12 +21,18 @@ class Step3 extends Component {
 
   componentDidMount() {
     store.subscribe(() => {
-      const reduxState = store.getState()
+      const reduxState = store.getState();
       this.setState({
+        name: reduxState.name,
+        address: reduxState.address,
+        city: reduxState.city,
+        state: reduxState.state,
+        zip: reduxState.zip,
+        img: reduxState.img,
         mortgage: reduxState.mortgage,
         rent: reduxState.rent
-      })
-    })
+      });
+    });
   }
 
   buildRequest() {
@@ -30,7 +42,7 @@ class Step3 extends Component {
         mortgage: this.state.mortgage,
         rent: this.state.rent
       }
-    })
+    });
     axios
       .post("/api/house/add", {
         name: this.state.name,
@@ -41,6 +53,21 @@ class Step3 extends Component {
         img: this.state.img,
         mortgage: this.state.mortgage,
         rent: this.state.rent
+      })
+      .then(() => {
+        store.dispatch({
+          type: CLEAR,
+          payload: {
+            name: "",
+            address: "",
+            city: "",
+            state: "",
+            zipcode: null,
+            img: "",
+            mortgage: null,
+            rent: null
+          }
+        });
       })
       .then(res => {
         this.props.history.push("/");
