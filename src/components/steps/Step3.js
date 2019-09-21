@@ -41,14 +41,7 @@ class Step3 extends Component {
     render() {
         return(
             <div className='wizard'>
-                <header className="subheader-wizard">
-                    <h1>Add New Listing</h1>
-                <Link to='/'>
-                <button className="cancel-btn">
-                    Cancel
-                </button>
-                </Link>
-                </header>
+                
                 <div className="input-container2">
                     <div className="mortgage-input">
                         Monthly Mortgage Amount

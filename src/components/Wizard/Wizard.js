@@ -1,6 +1,8 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
-import axios from 'axios'
+import React, {Component} from "react";
+import {Switch, Link, Route} from "react-router-dom";
+import Step1 from '../Steps/Step1'
+import Step2 from '../Steps/Step2'
+import Step3 from '../Steps/Step3'
 // import store, {
 //     HANDLE_CHANGE_NAME,
 //     HANDLE_CHANGE_ADDRESS,
@@ -10,88 +12,28 @@ import axios from 'axios'
 //   } from "../../store";
 
 class Wizard extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            name: '',
-            address: '',
-            city: '',
-            state: '',
-            zip: null
-        }
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    buildRequest() {
-        axios.post('/api/house/add', {
-            name: this.state.name,
-            address: this.state.address,
-            city: this.state.city,
-            state: this.state.state,
-            zipcode: this.state.zip
-        }).then(res => {
-            this.props.history.push('/')
-        })
-    }
-
-    handleChangeName (value) {
-        this.setState({name: value })
-    }
-
-    handleChangeAddress (value) {
-        this.setState({address: value })
-    }
-
-    handleChangeCity (value) {
-        this.setState({city: value })
-    }
-
-    handleChangeState (value) {
-        this.setState({state: value })
-    }
-
-    handleChangeZip (value) {
-        this.setState({zip: value })
-    }
-
-    render() {
-        return(
-            <div className='wizard'>
-                <header className="subheader-wizard">
-                    <h1>Add New Listing</h1>
-                <Link to='/'>
-                <button className="cancel-btn">
-                    Cancel
-                </button>
-                </Link>
-                </header>
-                <div className="input-container">
-                    <div className="property-input">
-                        Property name
-                        <input onChange={(e) => this.handleChangeName(e.target.value)} type="text" className="property-name input"/>
-                    </div>
-                    <div className="address-input">
-                        Address
-                        <input onChange={(e) => this.handleChangeAddress(e.target.value)} type="text" className="address input"/>
-                    </div>
-                    <div className="city-input">
-                        City
-                        <input onChange={(e) => this.handleChangeCity(e.target.value)} type="text" className="city input"/>
-                    </div>
-                    <div className="state-input">
-                        State
-                        <input onChange={(e) => this.handleChangeState(e.target.value)} type="text" className="state input"/>
-                    </div>
-                    <div className="zip-input">
-                        Zip
-                        <input onChange={(e) => this.handleChangeZip(e.target.value)} type="text" className="zip input"/>
-                    </div>
-                </div>
-                <div className="complete-btn-container">
-                <button onClick={() => this.buildRequest()} className="complete">Complete</button>
-                </div>
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className="wizard">
+        <header className="subheader-wizard">
+          <h1>Add New Listing</h1>
+          <Link to="/">
+            <button className="cancel-btn">Cancel</button>
+          </Link>
+        </header>
+        <div className="input-container"></div>
+        <Switch>
+            <Route path='/wizard/step1' component={Step1} />
+            <Route path='/wizard/step2'component={Step2} />
+            <Route path='/wizard/step3'component={Step3} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
-export default Wizard
+export default Wizard;

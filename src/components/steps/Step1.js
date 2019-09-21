@@ -20,19 +20,7 @@ class Step1 extends Component {
             zip: null
         }
     }
-
-    buildRequest() {
-        axios.post('/api/house/add', {
-            name: this.state.name,
-            address: this.state.address,
-            city: this.state.city,
-            state: this.state.state,
-            zipcode: this.state.zip
-        }).then(res => {
-            this.props.history.push('/')
-        })
-    }
-
+    
     handleChangeName (value) {
         this.setState({name: value })
     }
@@ -56,14 +44,7 @@ class Step1 extends Component {
     render() {
         return(
             <div className='wizard'>
-                <header className="subheader-wizard">
-                    <h1>Add New Listing</h1>
-                <Link to='/'>
-                <button className="cancel-btn">
-                    Cancel
-                </button>
-                </Link>
-                </header>
+                
                 <div className="input-container">
                     <div className="property-input">
                         Property name
