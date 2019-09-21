@@ -7,7 +7,6 @@ import Wizard from './components/Wizard/Wizard'
 
 export default (
     <Switch>
-        {/* <Route component={Header}/> */}
         <Route exact path='/' component={Dashboard} />
         <Route path='/wizard' component={Wizard}/>
     </Switch>

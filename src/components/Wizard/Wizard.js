@@ -10,22 +10,24 @@ class Wizard extends Component {
     super();
   }
 
-  updateStoreState() {
-    store.dispatch({
-      type: CLEAR,
-      payload: {
-        name: "",
-        address: "",
-        city: "",
-        state: "",
-        zip: null,
-        img: "",
-        mortgage: null,
-        rent: null
-      }
-    });
-    this.props.history.push("/");
-  }
+  // todo make this work
+
+  // updateStoreState() {
+  //   store.dispatch({
+  //     type: CLEAR,
+  //     payload: {
+  //       name: "",
+  //       address: "",
+  //       city: "",
+  //       state: "",
+  //       zip: null,
+  //       img: "",
+  //       mortgage: null,
+  //       rent: null
+  //     }
+  //   });
+  //   this.props.history.push("/");
+  // }
 
   render() {
     return (
