@@ -157,6 +157,8 @@ p {
 
 button {
     border: none;
+    height: 30px;
+    font-weight: bold;
 }
 
 .complete-btn-container {
@@ -167,20 +169,34 @@ button {
     margin-top: 200px;
 }
 
+.next-step1 {
+    background: #3B5249;
+    color: white;
+}
+
+.next-step2 {
+    background: #3B5249;
+    color: white;
+}
+
+.previous-step2 {
+    background: #3B5249;
+    color: white;
+}
+
+.previous-step3 {
+    background: #3B5249;
+    color: white;
+}
+
 .cancel-btn {
-    height: 30px;
     background: #FEC2C2;
-    font-weight: bold;
 }
 
 .complete {
-    height: 30px;
     background: #8AEA92;
-    font-weight: bold;
 }
 
 .add-property {
-    height: 30px;
     background: #8AEA92;
-    font-weight: bold;
 }

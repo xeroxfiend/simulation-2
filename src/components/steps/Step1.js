@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
-import axios from 'axios'
+import React, {Component} from "react";
+import {Link} from "react-router-dom";
+import axios from "axios";
 // import store, {
 //     HANDLE_CHANGE_NAME,
 //     HANDLE_CHANGE_ADDRESS,
@@ -10,69 +10,91 @@ import axios from 'axios'
 //   } from "../../store";
 
 class Step1 extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            name: '',
-            address: '',
-            city: '',
-            state: '',
-            zip: null
-        }
-    }
-    
-    handleChangeName (value) {
-        this.setState({name: value })
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      address: "",
+      city: "",
+      state: "",
+      zip: null
+    };
+  }
 
-    handleChangeAddress (value) {
-        this.setState({address: value })
-    }
+  handleChangeName(value) {
+    this.setState({name: value});
+  }
 
-    handleChangeCity (value) {
-        this.setState({city: value })
-    }
+  handleChangeAddress(value) {
+    this.setState({address: value});
+  }
 
-    handleChangeState (value) {
-        this.setState({state: value })
-    }
+  handleChangeCity(value) {
+    this.setState({city: value});
+  }
 
-    handleChangeZip (value) {
-        this.setState({zip: value })
-    }
+  handleChangeState(value) {
+    this.setState({state: value});
+  }
 
-    render() {
-        return(
-            <div className='wizard'>
-                
-                <div className="input-container">
-                    <div className="property-input">
-                        Property name
-                        <input onChange={(e) => this.handleChangeName(e.target.value)} type="text" className="property-name input"/>
-                    </div>
-                    <div className="address-input">
-                        Address
-                        <input onChange={(e) => this.handleChangeAddress(e.target.value)} type="text" className="address input"/>
-                    </div>
-                    <div className="city-input">
-                        City
-                        <input onChange={(e) => this.handleChangeCity(e.target.value)} type="text" className="city input"/>
-                    </div>
-                    <div className="state-input">
-                        State
-                        <input onChange={(e) => this.handleChangeState(e.target.value)} type="text" className="state input"/>
-                    </div>
-                    <div className="zip-input">
-                        Zip
-                        <input onChange={(e) => this.handleChangeZip(e.target.value)} type="text" className="zip input"/>
-                    </div>
-                </div>
-                <div className="complete-btn-container">
-                <button onClick={() => this.buildRequest()} className="complete">Complete</button>
-                </div>
-            </div>
-        )
-    }
+  handleChangeZip(value) {
+    this.setState({zip: value});
+  }
+
+  render() {
+    return (
+      <div className="step1">
+        <div className="input-container">
+          <div className="property-input">
+            Property name
+            <input
+              onChange={e => this.handleChangeName(e.target.value)}
+              type="text"
+              className="property-name input"
+            />
+          </div>
+          <div className="address-input">
+            Address
+            <input
+              onChange={e => this.handleChangeAddress(e.target.value)}
+              type="text"
+              className="address input"
+            />
+          </div>
+          <div className="city-input">
+            City
+            <input
+              onChange={e => this.handleChangeCity(e.target.value)}
+              type="text"
+              className="city input"
+            />
+          </div>
+          <div className="state-input">
+            State
+            <input
+              onChange={e => this.handleChangeState(e.target.value)}
+              type="text"
+              className="state input"
+            />
+          </div>
+          <div className="zip-input">
+            Zip
+            <input
+              onChange={e => this.handleChangeZip(e.target.value)}
+              type="text"
+              className="zip input"
+            />
+          </div>
+        </div>
+        <div className="next-step1-container">
+          <Link to='/wizard/step2'><button className="next-step1">
+            Next Step
+          </button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default Step1
+export default Step1;
