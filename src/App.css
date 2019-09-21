@@ -99,10 +99,12 @@ hr {
 
 .address {
     width: 490px;
+    margin-right: 150px;
 }
 
 .property-name {
     width: 250px;
+    margin-right: 50px;
 }
 
 .state {

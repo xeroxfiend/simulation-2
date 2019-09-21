@@ -13,11 +13,8 @@ class Step3 extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: '',
-            address: '',
-            city: '',
-            state: '',
-            zip: null
+            mortgage: '',
+            rent: ''
         }
     }
 
@@ -34,11 +31,11 @@ class Step3 extends Component {
     }
 
     handleChangeMortgage (value) {
-        this.setState({name: value })
+        this.setState({mortgage: value })
     }
 
     handleChangeRent (value) {
-        this.setState({address: value })
+        this.setState({rent: value })
     }
 
     render() {
@@ -53,17 +50,13 @@ class Step3 extends Component {
                 </Link>
                 </header>
                 <div className="input-container2">
-                    <div className="property-input">
+                    <div className="mortgage-input">
                         Monthly Mortgage Amount
-                        <input onChange={(e) => this.handleChangeName(e.target.value)} type="text" className="property-name input"/>
+                        <input onChange={(e) => this.handleChangeMortgage(e.target.value)} type="text" className="mortgage input"/>
                     </div>                    
-                    <div className="state-input">
-                        State
-                        <input onChange={(e) => this.handleChangeState(e.target.value)} type="text" className="state input"/>
-                    </div>
-                    <div className="zip-input">
-                        Zip
-                        <input onChange={(e) => this.handleChangeZip(e.target.value)} type="text" className="zip input"/>
+                    <div className="rent-input">
+                        Desired Monthly Rent
+                        <input onChange={(e) => this.handleChangeRent(e.target.value)} type="text" className="rent input"/>
                     </div>
                 </div>
                 <div className="complete-btn-container">
