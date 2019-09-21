@@ -1,20 +1,34 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
-import axios from "axios";
-// import store, {
-//     HANDLE_CHANGE_NAME,
-//     HANDLE_CHANGE_ADDRESS,
-//     HANDLE_CHANGE_CITY,
-//     HANDLE_CHANGE_STATE,
-//     HANDLE_CHANGE_ZIP
-//   } from "../../store";
+import store, {STEP_2} from "../../store";
 
 class Step2 extends Component {
   constructor(props) {
     super(props);
+    const reduxState = store.getState();
     this.state = {
-      img: ""
+      img: reduxState.img
     };
+  }
+
+  componentDidMount() {
+    store.subscribe(() => {
+      const reduxState = store.getState();
+      this.setState({
+        img: reduxState.img
+      });
+    });
+  }
+
+  updateStoreState() {
+    store
+      .dispatch({
+        type: STEP_2,
+        payload: {
+          img: this.state.img
+        }
+      })
+      this.props.history.push("/wizard/step3")
   }
 
   handleChangeImg(value) {
@@ -34,17 +48,16 @@ class Step2 extends Component {
             />
           </div>
         </div>
-        <div className="previous-step2-container">
-          <Link to='/wizard/step1'><button className="previous-step2">
-            Previous Step
-          </button>
+        <div className="steps2-container">
+          <Link to="/wizard/step1">
+            <button className="previous-step2">Previous Step</button>
           </Link>
-        </div>
-        <div className="next-step2-container">
-          <Link to='/wizard/step3'><button className="next-step2">
+          <button
+            onClick={() => this.updateStoreState()}
+            className="next-step2"
+          >
             Next Step
           </button>
-          </Link>
         </div>
       </div>
     );

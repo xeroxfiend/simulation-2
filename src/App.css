@@ -39,6 +39,32 @@
     margin: 3px 15px 30px 15px;
 }
 
+.steps1-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 40px;
+    margin-top: 100px;
+}
+
+.steps2-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-right: 40px;
+    margin-top: 100px;
+    margin-left: 40px;
+}
+
+.btns-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-right: 40px;
+    margin-top: 100px;
+    margin-left: 40px;
+}
+
 .subheader-dash {
     height: 70px;
     display: flex;

@@ -1,2 +1,2 @@
-insert into houses (name, address, city, state, zipcode)
-values (${name}, ${address}, ${city}, ${state}, ${zipcode});
+insert into houses (name, address, city, state, zipcode, image, monthly_mortgage, desired_rent)
+values (${name}, ${address}, ${city}, ${state}, ${zipcode}, ${image}, ${monthly_mortgage}, ${desired_rent});

@@ -1,36 +1,51 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
-// import store, {
-//     HANDLE_CHANGE_NAME,
-//     HANDLE_CHANGE_ADDRESS,
-//     HANDLE_CHANGE_CITY,
-//     HANDLE_CHANGE_STATE,
-//     HANDLE_CHANGE_ZIP
-//   } from "../../store";
+import store, {STEP_3} from "../../store";
 
 class Step3 extends Component {
   constructor(props) {
     super(props);
+    const reduxState = store.getState();
     this.state = {
-      mortgage: "",
-      rent: ""
+      mortgage: reduxState.mortgage,
+      rent: reduxState.rent
     };
   }
 
-//   buildRequest() {
-//     axios
-//       .post("/api/house/add", {
-//         name: this.state.name,
-//         address: this.state.address,
-//         city: this.state.city,
-//         state: this.state.state,
-//         zipcode: this.state.zip
-//       })
-//       .then(res => {
-//         this.props.history.push("/");
-//       });
-//   }
+  componentDidMount() {
+    store.subscribe(() => {
+      const reduxState = store.getState()
+      this.setState({
+        mortgage: reduxState.mortgage,
+        rent: reduxState.rent
+      })
+    })
+  }
+
+  buildRequest() {
+    store.dispatch({
+      type: STEP_3,
+      payload: {
+        mortgage: this.state.mortgage,
+        rent: this.state.rent
+      }
+    })
+    axios
+      .post("/api/house/add", {
+        name: this.state.name,
+        address: this.state.address,
+        city: this.state.city,
+        state: this.state.state,
+        zipcode: this.state.zip,
+        img: this.state.img,
+        mortgage: this.state.mortgage,
+        rent: this.state.rent
+      })
+      .then(res => {
+        this.props.history.push("/");
+      });
+  }
 
   handleChangeMortgage(value) {
     this.setState({mortgage: value});
@@ -62,13 +77,10 @@ class Step3 extends Component {
           </div>
         </div>
         <div className="btns-container">
-        <div className="previous-step3-container">
-          <Link to='/wizard/step2'><button className="previous-step3">
-            Previous Step
-          </button>
+          <Link to="/wizard/step2">
+            <button className="previous-step3">Previous Step</button>
           </Link>
-        </div>
-          <button className="complete">
+          <button onClick={() => this.buildRequest()} className="complete">
             Complete
           </button>
         </div>
