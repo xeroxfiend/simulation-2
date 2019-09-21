@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {Link} from "react-router-dom";
 import store, {STEP_2} from "../../store";
 
 class Step2 extends Component {
@@ -20,14 +19,14 @@ class Step2 extends Component {
     });
   }
 
-  updateStoreState() {
+  updateStoreState(str) {
     store.dispatch({
       type: STEP_2,
       payload: {
         img: this.state.img
       }
-    });
-    this.props.history.push("/wizard/step3");
+    })
+    this.props.history.push(str);
   }
 
   handleChangeImg(value) {
@@ -41,6 +40,7 @@ class Step2 extends Component {
           <div className="img-input">
             Image URL
             <input
+              defaultValue={this.state.img}
               onChange={e => this.handleChangeImg(e.target.value)}
               type="text"
               className="image-url"
@@ -48,11 +48,15 @@ class Step2 extends Component {
           </div>
         </div>
         <div className="steps2-container">
-          <Link to="/wizard/step1">
-            <button className="previous-step2">Previous Step</button>
-          </Link>
           <button
-            onClick={() => this.updateStoreState()}
+            onClick={() => this.updateStoreState("/wizard/step1")}
+            className="previous-step2"
+          >
+            Previous Step
+          </button>
+
+          <button
+            onClick={() => this.updateStoreState("/wizard/step3")}
             className="next-step2"
           >
             Next Step

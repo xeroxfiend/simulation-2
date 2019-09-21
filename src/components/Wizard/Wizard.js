@@ -3,15 +3,30 @@ import {Switch, Link, Route} from "react-router-dom";
 import Step1 from "../Steps/Step1";
 import Step2 from "../Steps/Step2";
 import Step3 from "../Steps/Step3";
-// import store, {
-//     HANDLE_CHANGE_NAME,
-//     HANDLE_CHANGE_ADDRESS,
-//     HANDLE_CHANGE_CITY,
-//     HANDLE_CHANGE_STATE,
-//     HANDLE_CHANGE_ZIP
-//   } from "../../store";
+import store, {CLEAR} from "../../store";
 
 class Wizard extends Component {
+  constructor() {
+    super();
+  }
+
+  updateStoreState() {
+    store.dispatch({
+      type: CLEAR,
+      payload: {
+        name: "",
+        address: "",
+        city: "",
+        state: "",
+        zip: null,
+        img: "",
+        mortgage: null,
+        rent: null
+      }
+    });
+    this.props.history.push("/");
+  }
+
   render() {
     return (
       <div className="wizard">

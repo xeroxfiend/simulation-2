@@ -15,7 +15,6 @@ class Dashboard extends Component {
   getData() {
     axios.get("/api/house").then(res => {
       this.setState({houseList: res.data});
-      console.log(this.state.houseList)
     });
   }
 

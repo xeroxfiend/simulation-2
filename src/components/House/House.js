@@ -22,8 +22,8 @@ class House extends Component {
           <p className="pzip">{this.props.houseData.zipcode}</p>
         </div>
         <div className="mortgage-rent-container">
-          <p className='pmortgage'>{this.props.houseData.monthly_mortgage}</p>
-          <p className='prent'>{this.props.houseData.desired_rent}</p>
+          <p className='pmortgage'>${this.props.houseData.monthly_mortgage}</p>
+          <p className='prent'>${this.props.houseData.desired_rent}</p>
         </div>
         <div className="button-container">
           <button

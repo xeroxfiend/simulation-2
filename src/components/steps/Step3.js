@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {Link} from "react-router-dom";
 import axios from "axios";
 import store, {STEP_3, CLEAR} from "../../store";
 
@@ -74,6 +73,17 @@ class Step3 extends Component {
       });
   }
 
+  updateStore() {
+    store.dispatch({
+      type: STEP_3,
+      payload: {
+        mortgage: this.state.mortgage,
+        rent: this.state.rent
+      }
+    })
+    this.props.history.push('/wizard/step2')
+  }
+
   handleChangeMortgage(value) {
     this.setState({mortgage: value});
   }
@@ -89,6 +99,7 @@ class Step3 extends Component {
           <div className="mortgage-input">
             Monthly Mortgage Amount
             <input
+              defaultValue={this.state.mortgage}
               onChange={e => this.handleChangeMortgage(e.target.value)}
               type="text"
               className="mortgage input"
@@ -97,6 +108,7 @@ class Step3 extends Component {
           <div className="rent-input">
             Desired Monthly Rent
             <input
+              defaultValue={this.state.rent}
               onChange={e => this.handleChangeRent(e.target.value)}
               type="text"
               className="rent input"
@@ -104,9 +116,8 @@ class Step3 extends Component {
           </div>
         </div>
         <div className="btns-container">
-          <Link to="/wizard/step2">
-            <button className="previous-step3">Previous Step</button>
-          </Link>
+          <button onClick={() => this.updateStore()} className="previous-step3">Previous Step</button>
+
           <button onClick={() => this.buildRequest()} className="complete">
             Complete
           </button>

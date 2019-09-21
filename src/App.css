@@ -147,6 +147,11 @@ hr {
     border-radius: 5px;
 }
 
+.img-container {
+    display: flex;
+    align-items: center;
+}
+
 .info-container {
     display: flex;
     flex-direction: column;
