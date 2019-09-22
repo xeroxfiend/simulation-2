@@ -93,9 +93,11 @@ class Step3 extends Component {
   }
 
   render() {
+    const recommended = this.state.mortgage * 1.25
     return (
       <div className="wizard">
         <div className="input-container2">
+          <p className="recommended">{`Recommended Rent: $${recommended}`}</p>
           <div className="mortgage-input">
             <p className='pm'>Monthly Mortgage Amount</p>
             <input
