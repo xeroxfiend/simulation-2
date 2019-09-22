@@ -28,7 +28,7 @@ class Wizard extends Component {
     return (
       <div className="wizard">
         <header className="subheader-wizard">
-          <h1>Add New Listing</h1>
+          <h1 className='add-listing'>Add New Listing</h1>
             <button onClick={() => this.updateStoreState()} className="cancel-btn">Cancel</button>
         </header>
         <div className="input-container"></div>

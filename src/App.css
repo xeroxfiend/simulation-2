@@ -76,6 +76,10 @@
     font-weight: bold;
 }
 
+.add-listing {
+    color: #3B5249;
+}
+
 hr {
     width: 96%;
     height: 1.2px;
