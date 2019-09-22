@@ -1,7 +1,7 @@
 .App {
     min-height: 100vh;
     width: auto;
-    background: #AFD4C0;
+    background: #afd4c0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,6 +17,8 @@
     font-weight: bold;
     letter-spacing: 1px;
     font-size: 2rem;
+    box-shadow: 3px 3px 3px grey;
+    z-index: 1;
 }
 
 .header-image {
@@ -29,7 +31,7 @@
 .main {
     min-height: 100vh;
     width: 60%;
-    background: #E5F4EC;
+    background: #e5f4ec;
 }
 
 .subheader-wizard {
@@ -71,13 +73,13 @@
     justify-content: space-between;
     align-items: center;
     margin: 0px 15px 0px 15px;
-    color: #3B5249;
+    color: #3b5249;
     font-size: 2rem;
     font-weight: bold;
 }
 
 .add-listing {
-    color: #3B5249;
+    color: #3b5249;
 }
 
 hr {
@@ -165,9 +167,14 @@ hr {
     justify-content: space-between;
     height: auto;
     margin: 0 15px 25px 15px;
-    background: #DEDEDE;
+    background: #dedede;
     padding: 10px;
     border-radius: 5px;
+}
+
+.house:hover {
+    transform: scale(1.01);
+    transition: 0.1s;
 }
 
 .img-container {
@@ -194,37 +201,37 @@ p {
 }
 
 .pproperty::before {
-    content: 'Property Name: ';
+    content: "Property Name: ";
     font-weight: bold;
 }
 
 .paddress::before {
-    content: 'Address: ';
+    content: "Address: ";
     font-weight: bold;
 }
 
 .pcity:before {
-    content: 'City: ';
+    content: "City: ";
     font-weight: bold;
 }
 
 .pstate::before {
-    content: 'State: ';
+    content: "State: ";
     font-weight: bold;
 }
 
 .pzip::before {
-    content: 'Zip: ';
+    content: "Zip: ";
     font-weight: bold;
 }
 
 .pmortgage::before {
-    content: 'Monthly Mortgage: ';
+    content: "Monthly Mortgage: ";
     font-weight: bold;
 }
 
 .prent::before {
-    content: 'Desired Rent: ';
+    content: "Desired Rent: ";
     font-weight: bold;
 }
 
@@ -262,6 +269,11 @@ button {
     border: none;
     height: 30px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.7;
 }
 
 .complete-btn-container {
@@ -273,35 +285,35 @@ button {
 }
 
 .next-step1 {
-    background: #3B5249;
+    background: #3b5249;
     color: white;
 }
 
 .next-step2 {
-    background: #3B5249;
+    background: #3b5249;
     color: white;
 }
 
 .previous-step2 {
-    background: #3B5249;
+    background: #3b5249;
     color: white;
 }
 
 .previous-step3 {
-    background: #3B5249;
+    background: #3b5249;
     color: white;
 }
 
 .cancel-btn {
-    background: #FEC2C2;
+    background: #fec2c2;
 }
 
 .complete {
-    background: #8AEA92;
+    background: #8aea92;
 }
 
 .add-property {
-    background: #8AEA92;
+    background: #8aea92;
 }
 
 img {
