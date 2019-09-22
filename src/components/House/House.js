@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import defaultImage from '../../assets/imageDefault.JPG'
 
 class House extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class House extends Component {
     return (
       <div className="house">
         <div className="img-container">
-          <img src={this.props.houseData.image} alt="House"/>
+          <img src={this.props.houseData.image ? this.props.houseData.image : defaultImage} alt="House"/>
         </div>
         <div className="info-container">
           <p className="pproperty">{this.props.houseData.name}</p>

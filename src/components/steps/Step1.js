@@ -67,7 +67,7 @@ class Step1 extends Component {
       <div className="step1">
         <div className="input-container">
           <div className="property-input">
-            Property name
+            <p className='pp'>Property name</p>
             <input
               defaultValue={this.state.name}
               onChange={e => this.handleChangeName(e.target.value)}
@@ -76,7 +76,7 @@ class Step1 extends Component {
             />
           </div>
           <div className="address-input">
-            Address
+          <p className='pa'>Address</p>
             <input
               defaultValue={this.state.address}
               onChange={e => this.handleChangeAddress(e.target.value)}
@@ -85,7 +85,7 @@ class Step1 extends Component {
             />
           </div>
           <div className="city-input">
-            City
+          <p className='pc'>City</p>
             <input
               defaultValue={this.state.city}
               onChange={e => this.handleChangeCity(e.target.value)}
@@ -94,7 +94,7 @@ class Step1 extends Component {
             />
           </div>
           <div className="state-input">
-            State
+          <p className='ps'>State</p>
             <input
               defaultValue={this.state.state}
               onChange={e => this.handleChangeState(e.target.value)}
@@ -103,7 +103,7 @@ class Step1 extends Component {
             />
           </div>
           <div className="zip-input">
-            Zip
+          <p className='pz'>Zip</p>
             <input
               defaultValue={this.state.zip}
               onChange={e => this.handleChangeZip(e.target.value)}

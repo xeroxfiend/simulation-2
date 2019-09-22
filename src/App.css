@@ -97,6 +97,25 @@ hr {
     margin-left: 100px;
 }
 
+.rent-input {
+    margin-left: -30px;
+}
+
+.rent-input1 {
+    width: 250px;
+}
+
+.mortgage-input1 {
+    width: 250px;
+    margin-left: -30px;
+}
+
+.input-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .input {
     display: flex;
     flex-direction: column;
@@ -155,12 +174,14 @@ hr {
 .info-container {
     display: flex;
     flex-direction: column;
+    max-width: 350px;
     margin-left: -50px;
 }
 
 .mortgage-rent-container {
     display: flex;
     flex-direction: column;
+    max-width: 200px;
     margin-left: -30px;
 }
 
@@ -200,6 +221,36 @@ p {
 
 .prent::before {
     content: 'Desired Rent: ';
+    font-weight: bold;
+}
+
+.pp {
+    margin-left: 15px;
+}
+
+.pa {
+    margin-left: 15px;
+}
+
+.pc {
+    margin-left: 15px;
+}
+
+.ps {
+    margin-left: 15px;
+}
+
+.pz {
+    margin-left: 15px;
+}
+
+.pm {
+    margin-left: -25px;
+    font-weight: bold;
+    /* margin-right: px; */
+}
+
+.pd {
     font-weight: bold;
 }
 
@@ -253,4 +304,19 @@ img {
     height: 150px;
     width: 200px;
     border-radius: 5px;
+}
+
+.img-input {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-url {
+    width: 490px;
+}
+
+.pimageurl {
+    margin-left: -390px;
 }

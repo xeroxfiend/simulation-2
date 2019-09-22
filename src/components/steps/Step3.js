@@ -97,21 +97,21 @@ class Step3 extends Component {
       <div className="wizard">
         <div className="input-container2">
           <div className="mortgage-input">
-            Monthly Mortgage Amount
+            <p className='pm'>Monthly Mortgage Amount</p>
             <input
               defaultValue={this.state.mortgage}
               onChange={e => this.handleChangeMortgage(e.target.value)}
               type="text"
-              className="mortgage input"
+              className="mortgage-input1"
             />
           </div>
           <div className="rent-input">
-            Desired Monthly Rent
+            <p className='pd'>Desired Monthly Rent</p>
             <input
               defaultValue={this.state.rent}
               onChange={e => this.handleChangeRent(e.target.value)}
               type="text"
-              className="rent input"
+              className="rent-input1"
             />
           </div>
         </div>

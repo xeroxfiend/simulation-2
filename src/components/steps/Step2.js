@@ -38,7 +38,7 @@ class Step2 extends Component {
       <div className="step2">
         <div className="input-container1">
           <div className="img-input">
-            Image URL
+            <p className='pimageurl'>Image URL</p>
             <input
               defaultValue={this.state.img}
               onChange={e => this.handleChangeImg(e.target.value)}
