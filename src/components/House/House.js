@@ -27,6 +27,8 @@ class House extends Component {
           <p className='prent'>${this.props.houseData.desired_rent}</p>
         </div>
         <div className="button-container">
+        <div className="invisible">
+          </div>
           <button
             onClick={() => this.props.deleteFn(this.props.houseData.house_id)}
             className="delete"

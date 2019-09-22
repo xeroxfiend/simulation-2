@@ -36,6 +36,7 @@
 .main {
     min-height: 100vh;
     width: 60%;
+    min-width: 620px;
     background: #e5f4ec;
 }
 
@@ -169,12 +170,11 @@ hr {
 
 .house {
     display: flex;
-    justify-content: space-between;
     height: auto;
     margin: 0 15px 25px 15px;
     background: #dedede;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 .house:hover {
@@ -184,21 +184,31 @@ hr {
 
 .img-container {
     display: flex;
+    justify-content: center;
     align-items: center;
+    margin-right: 10px;
 }
 
 .info-container {
     display: flex;
     flex-direction: column;
-    max-width: 350px;
-    margin-left: -50px;
+    align-items: flex-start;
+    margin-right: 10px;
 }
 
 .mortgage-rent-container {
     display: flex;
     flex-direction: column;
-    max-width: 200px;
-    margin-left: -30px;
+    align-items: flex-start;
+}
+
+.invisible {
+    width: 15vw;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 p {
@@ -324,7 +334,7 @@ button:hover {
 img {
     height: 150px;
     width: 200px;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 .img-input {
